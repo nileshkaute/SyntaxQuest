@@ -1,0 +1,77 @@
+[
+  {
+    "title": "Variables & Data Types",
+    "questions": [
+      {
+        "question": "Which of the following is a correct way to declare a variable?",
+        "options": ["var x = 10;", "int x = 10;", "let x := 10;", "variable x = 10;"],
+        "answer": "var x = 10;"
+      },
+      {
+        "question": "Which data type is NOT primitive in JavaScript?",
+        "options": ["String", "Number", "Object", "Boolean"],
+        "answer": "Object"
+      },
+      {
+        "question": "What will `typeof null` return?",
+        "options": ["null", "object", "undefined", "number"],
+        "answer": "object"
+      }
+    ]
+  },
+  {
+    "title": "Operators & Conditionals",
+    "questions": [
+      {
+        "question": "What is the result of `5 == '5'`?",
+        "options": ["true", "false", "undefined", "NaN"],
+        "answer": "true"
+      },
+      {
+        "question": "Which operator is used for strict equality?",
+        "options": ["==", "=", "===", "!="],
+        "answer": "==="
+      }
+    ]
+  },
+  {
+    "title": "Loops",
+    "questions": [
+      {
+        "question": "Which loop is guaranteed to run at least once?",
+        "options": ["for", "while", "do-while", "forEach"],
+        "answer": "do-while"
+      }
+    ]
+  },
+  {
+    "title": "Functions",
+    "questions": [
+      {
+        "question": "Which is a correct arrow function syntax?",
+        "options": ["() => {}", "function => {}", "function() => {}", "() function => {}"],
+        "answer": "() => {}"
+      }
+    ]
+  },
+  {
+    "title": "Arrays & Objects",
+    "questions": [
+      {
+        "question": "Which method adds an element at the end of an array?",
+        "options": ["push()", "pop()", "shift()", "unshift()"],
+        "answer": "push()"
+      }
+    ]
+  },
+  {
+    "title": "DOM & Events",
+    "questions": [
+      {
+        "question": "Which method selects an element by its ID?",
+        "options": ["getElementById()", "querySelectorAll()", "getElementsByClassName()", "getElementByClass()"],
+        "answer": "getElementById()"
+      }
+    ]
+  }
+]

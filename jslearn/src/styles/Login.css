@@ -1,0 +1,131 @@
+/* ==============================
+   Dark Modern Login Page CSS
+   ============================== */
+
+/* Full screen gradient background */
+.login-container {
+  min-height: 120vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Card */
+.login-card {
+  background-color: #121212; /* slightly darker card */
+  padding: 2.5rem 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* Heading */
+.login-card h2 {
+  color: #7FDBFF; /* subtle light cyan heading */
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* Input container */
+.input-group {
+  display: flex;
+  align-items: center;
+  background-color: #1e1e1e; /* dark input background */
+  border: 1px solid #555; /* neutral border */
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group:focus-within {
+  border-color: #70FFAA; /* mint green focus */
+  box-shadow: 0 0 10px rgba(112,255,170,0.4);
+}
+
+/* Input field */
+.input-group input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #B0E0E6; /* subtle blue text */
+  flex: 1;
+  font-size: 1rem;
+}
+
+/* Input icons */
+.input-group svg {
+  margin-right: 0.75rem;
+  color: #70FFAA; /* mint green icon */
+}
+
+/* Button */
+.login-card button {
+  background: linear-gradient(90deg, #70FFAA, #4BE590); /* gradient mint button */
+  border: none;
+  color: #0a192f; /* text readable on mint */
+  font-weight: bold;
+  padding: 0.75rem 0;
+  width: 100%;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.login-card button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(75,229,144,0.5); /* mint glow on hover */
+}
+
+/* Additional links */
+.login-card .extra {
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: #B0E0E6; /* subtle text */
+}
+
+.login-card .extra a {
+  color: #7FDBFF; /* light cyan link */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.login-card .extra a:hover {
+  color: #70FFAA; /* mint green on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 450px) {
+  .login-card {
+    padding: 2rem 1.5rem;
+    border-radius: 1.5rem;
+  }
+  .login-card h2 {
+    font-size: 2rem;
+  }
+  .input-group input {
+    font-size: 0.95rem;
+  }
+  .login-card button {
+    font-size: 0.95rem;
+  }
+}
+/* contact */
+.login-card textarea {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  padding: 10px;
+  font-size: 1rem;
+  resize: none;
+}

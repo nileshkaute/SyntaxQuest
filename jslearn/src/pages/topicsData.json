@@ -1,0 +1,301 @@
+{
+  "variables": {
+    "title": "Variables",
+    "definition": "Variables are containers that store data values for reuse and manipulation in a program.",
+    "whyUse": "They allow you to store and manage data dynamically instead of hardcoding values.",
+    "whenUse": "Whenever you need to store data temporarily, like user inputs, API responses, or counters.",
+    "confusions": [
+      "'var' vs 'let' vs 'const'",
+      "Hoisting behavior of 'var'",
+      "Reassigning constants is not allowed"
+    ],
+    "thinking": "Think of variables as labeled boxes where you can store and retrieve values. Decide whether the value will change ('let') or stay constant ('const').",
+    "questions": {
+      "easy": [
+        "Declare a variable 'username' and store your name. Print it.",
+        "Create a constant 'PI' and assign 3.141. Try reassigning it to see the error.",
+        "Declare variables 'a=10' and 'b=20'. Print their sum."
+      ],
+      "medium": [
+        "Swap values of variables a=5 and b=10 without using a temporary variable.",
+        "Declare multiple variables in one statement: x=1, y=2, z=3 and print them.",
+        "Demonstrate variable hoisting with 'var' using console.log before declaration."
+      ],
+      "hard": [
+        "Create a counter variable that counts how many times a function is called.",
+        "Store a user's profile (name, age, email) in variables and print a formatted profile card.",
+        "Show difference in block scope using 'var' vs 'let' inside an if statement."
+      ]
+    }
+  },
+
+  "data-types": {
+    "title": "Data Types",
+    "definition": "Data types define the kind of values a variable can hold, like numbers, strings, or objects.",
+    "whyUse": "They help determine what operations can be performed on the data.",
+    "whenUse": "Whenever you declare a variable, you are working with a data type.",
+    "confusions": [
+      "Difference between null and undefined",
+      "Arrays and objects are reference types",
+      "NaN is still of type 'number'"
+    ],
+    "thinking": "Think of data types as categories of information. Always check the type with 'typeof' to avoid bugs.",
+    "questions": {
+      "easy": [
+        "Check the type of: 'hello', 42, true, null, undefined.",
+        "Convert string '123' into a number and number 456 into a string.",
+        "Create an array with mixed data types and print each element's type."
+      ],
+      "medium": [
+        "Create an object with properties of different types (string, number, boolean).",
+        "Compare null and undefined using == and ===.",
+        "Demonstrate NaN by dividing a string by a number."
+      ],
+      "hard": [
+        "Write a function that takes any input and returns its type.",
+        "Check if a variable is an array using Array.isArray().",
+        "Create a nested object with different data types and print all values recursively."
+      ]
+    }
+  },
+
+  "operators": {
+    "title": "Operators",
+    "definition": "Operators are symbols used to perform operations on values and variables.",
+    "whyUse": "They allow you to perform calculations, comparisons, and logic building.",
+    "whenUse": "When doing arithmetic, decision-making, or updating values.",
+    "confusions": [
+      "Difference between == and ===",
+      "Using assignment '=' instead of comparison '=='",
+      "Misunderstanding operator precedence"
+    ],
+    "thinking": "Think of operators as verbs in sentences. They define how values interact with each other.",
+    "questions": {
+      "easy": [
+        "Calculate: 10 + 5 * 2 - 8 / 4.",
+        "Check if 5 == '5' and 5 === '5'.",
+        "Use += to increment a variable from 0 to 10."
+      ],
+      "medium": [
+        "Write a ternary operator to check if a number is even or odd.",
+        "Check if a number is between 10 and 20 using comparison operators.",
+        "Use && and || to combine conditions in an if statement."
+      ],
+      "hard": [
+        "Write a calculator function that takes two numbers and an operator (+, -, *, /) and returns the result.",
+        "Use ! operator to invert a boolean and explain double negation (!!).",
+        "Combine arithmetic and assignment operators to calculate compound interest."
+      ]
+    }
+  },
+
+  "conditionals": {
+    "title": "Conditionals",
+    "definition": "Conditionals let you run different code based on conditions being true or false.",
+    "whyUse": "They allow programs to make decisions and follow different paths.",
+    "whenUse": "When you want to handle multiple possible outcomes.",
+    "confusions": [
+      "Using assignment '=' instead of comparison",
+      "Forgetting break in switch cases",
+      "Falsy vs truthy values"
+    ],
+    "thinking": "Think of conditionals like crossroads. You choose the path depending on the condition.",
+    "questions": {
+      "easy": [
+        "Write an if statement to check if a number is positive or negative.",
+        "Write a ternary operator to return 'adult' if age >= 18, 'minor' otherwise.",
+        "Check if a variable exists and is not null using truthy checks."
+      ],
+      "medium": [
+        "Use switch case to handle different string commands: 'start', 'stop', 'pause'.",
+        "Create nested if statements to check grade ranges (A, B, C, D, F).",
+        "Write conditionals to validate user input (non-empty string, valid email format)."
+      ],
+      "hard": [
+        "Create a grading system with multiple else-if statements and real scores.",
+        "Write a program that takes weather input ('rainy', 'sunny', 'snowy') and prints what to wear.",
+        "Use short-circuit evaluation with || to provide default values when user input is missing."
+      ]
+    }
+  },
+
+  "loops": {
+    "title": "Loops",
+    "definition": "Loops are used to repeat code multiple times until a condition is met.",
+    "whyUse": "They make repetitive tasks easier and reduce code duplication.",
+    "whenUse": "When processing arrays, repeating tasks, or waiting for conditions.",
+    "confusions": [
+      "Infinite loops when forgetting to update condition",
+      "Difference between while and do-while",
+      "Using break vs continue"
+    ],
+    "thinking": "Think of loops as automatic machines that repeat tasks until told to stop.",
+    "questions": {
+      "easy": [
+        "Write a for loop to print numbers 1 to 10.",
+        "Use while loop to sum numbers until total exceeds 100.",
+        "Use do-while loop to ask user for input at least once."
+      ],
+      "medium": [
+        "Iterate through an array of names and print each in uppercase.",
+        "Print multiplication table of 5 using a loop.",
+        "Use continue to skip odd numbers and print only even numbers between 1-20."
+      ],
+      "hard": [
+        "Create nested loops to print a 5x5 star pattern.",
+        "Write a loop that finds prime numbers between 1 and 100.",
+        "Use for...in loop to iterate through object properties and print key-value pairs."
+      ]
+    }
+  },
+
+  "functions": {
+    "title": "Functions",
+    "definition": "Functions are reusable blocks of code that perform specific tasks.",
+    "whyUse": "They avoid repetition, improve readability, and enable modular programming.",
+    "whenUse": "Whenever you need to reuse logic multiple times or isolate functionality.",
+    "confusions": [
+      "Difference between function declaration and expression",
+      "Arrow function vs normal function (this binding)",
+      "Scope and closures"
+    ],
+    "thinking": "Think of functions like recipes. They take ingredients (parameters) and return results.",
+    "questions": {
+      "easy": [
+        "Write a function that takes two numbers and returns their sum.",
+        "Create an arrow function that squares a number.",
+        "Write a function with default parameter values."
+      ],
+      "medium": [
+        "Write a recursive function to calculate factorial of a number.",
+        "Use rest parameters to create a function that sums any number of arguments.",
+        "Create a function that takes a callback and executes it."
+      ],
+      "hard": [
+        "Create a closure function that remembers how many times it's called.",
+        "Write a higher-order function that takes an array and a function, applies the function to each element.",
+        "Write an IIFE that prints 'Hello, World!' immediately."
+      ]
+    }
+  },
+
+  "arrays": {
+    "title": "Arrays",
+    "definition": "Arrays are ordered collections of elements stored in a single variable.",
+    "whyUse": "They allow you to store and manage multiple values in one structure.",
+    "whenUse": "When you want to group related values like a list of names or numbers.",
+    "confusions": [
+      "Arrays are zero-indexed",
+      "Difference between push, pop, shift, unshift",
+      "Arrays are reference types"
+    ],
+    "thinking": "Think of arrays like a train with numbered seats. Each seat holds a value you can access by index.",
+    "questions": {
+      "easy": [
+        "Create an array of 5 fruits and print them.",
+        "Access the first and last element of an array.",
+        "Add and remove elements using push and pop."
+      ],
+      "medium": [
+        "Loop through an array and print each element in uppercase.",
+        "Use map to square each number in an array.",
+        "Find the largest number in an array."
+      ],
+      "hard": [
+        "Flatten a nested array [[1,2],[3,4]] into [1,2,3,4].",
+        "Remove duplicate values from an array.",
+        "Write a function to reverse an array without using reverse()."
+      ]
+    }
+  },
+
+  "objects": {
+    "title": "Objects",
+    "definition": "Objects are collections of key-value pairs used to store structured data.",
+    "whyUse": "They allow grouping of related data and methods together.",
+    "whenUse": "When modeling entities like users, products, or configurations.",
+    "confusions": [
+      "Dot notation vs bracket notation",
+      "Objects are reference types",
+      "Difference between shallow and deep copy"
+    ],
+    "thinking": "Think of objects as dictionaries where keys are words and values are their meanings.",
+    "questions": {
+      "easy": [
+        "Create an object for a car with properties: brand, model, year.",
+        "Access and print a property value using dot notation.",
+        "Add a new property 'color' to the object."
+      ],
+      "medium": [
+        "Loop through an object and print all keys and values.",
+        "Delete a property from an object.",
+        "Check if a property exists in an object."
+      ],
+      "hard": [
+        "Create a nested object for a user with address details.",
+        "Clone an object without reference issues.",
+        "Write a function that merges two objects."
+      ]
+    }
+  },
+
+  "events": {
+    "title": "Events",
+    "definition": "Events are actions or occurrences that happen in the browser, like clicks or key presses.",
+    "whyUse": "They let your program respond to user interactions.",
+    "whenUse": "When building interactive web applications.",
+    "confusions": [
+      "Difference between inline and addEventListener",
+      "Event bubbling vs capturing",
+      "this keyword inside event handlers"
+    ],
+    "thinking": "Think of events like signals. When something happens, your code listens and reacts.",
+    "questions": {
+      "easy": [
+        "Add a click event listener to a button that prints 'Button clicked!'.",
+        "Create an input field and log its value on change.",
+        "Show an alert when a page loads."
+      ],
+      "medium": [
+        "Prevent a form from submitting using event.preventDefault().",
+        "Add mouseover event to change background color of a div.",
+        "Track keydown events and print which key was pressed."
+      ],
+      "hard": [
+        "Implement event delegation for a list of items.",
+        "Create a custom event and dispatch it.",
+        "Build a simple counter with increment/decrement buttons using events."
+      ]
+    }
+  },
+
+  "dom": {
+    "title": "DOM",
+    "definition": "DOM (Document Object Model) represents the structure of a webpage as a tree of objects.",
+    "whyUse": "It allows JavaScript to interact with and manipulate webpage content.",
+    "whenUse": "When dynamically updating HTML, CSS, or responding to user actions.",
+    "confusions": [
+      "Difference between innerText and innerHTML",
+      "querySelector vs getElementById",
+      "Live vs static node lists"
+    ],
+    "thinking": "Think of the DOM like a family tree where each node is connected and can be accessed or modified.",
+    "questions": {
+      "easy": [
+        "Select a paragraph by ID and change its text.",
+        "Change the background color of a div using JavaScript.",
+        "Add a new list item to an unordered list."
+      ],
+      "medium": [
+        "Select all paragraphs and change their font size.",
+        "Create a new element dynamically and append it to the body.",
+        "Remove an element from the DOM."
+      ],
+      "hard": [
+        "Build a simple to-do list app with add and delete functionality.",
+        "Traverse the DOM tree to find parent and child nodes.",
+        "Implement a light/dark mode toggle using DOM manipulation."
+      ]
+    }
+  }
+}

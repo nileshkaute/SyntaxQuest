@@ -1,0 +1,70 @@
+// ...existing code...
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+// ...existing code...
+# Backend-specific ignores for jslearn-backend
+/jslearn-backend/node_modules/
+/jslearn-backend/dist/
+/jslearn-backend/build/
+/jslearn-backend/coverage/
+/jslearn-backend/logs/
+/jslearn-backend/*.log
+/jslearn-backend/npm-debug.log*
+/jslearn-backend/yarn-debug.log*
+/jslearn-backend/pnpm-debug.log*
+/jslearn-backend/.env
+/jslearn-backend/.env.local
+/jslearn-backend/.env.*
+# End backend-specific ignores
+// ...existing code...
+
+
+# Node / backend artifacts
+node_modules/
+dist/
+build/
+coverage/
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Environment files (don't commit secrets)
+.env
+.env.local
+.env.*
+
+# Lockfiles (optional: keep or ignore based on repo policy)
+# package-lock.json
+# yarn.lock
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Misc
+*.local

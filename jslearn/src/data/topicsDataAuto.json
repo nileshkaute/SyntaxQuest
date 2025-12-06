@@ -1,0 +1,803 @@
+{
+  "variables": {
+    "title": "Variables",
+    "definition": "Variables are containers that store data values for reuse and manipulation in a program.",
+    "whyUse": "They allow you to store and manage data dynamically instead of hardcoding values.",
+    "whenUse": "Whenever you need to store data temporarily, like user inputs, API responses, or counters.",
+    "confusions": [
+      "'var' vs 'let' vs 'const'",
+      "Hoisting behavior of 'var'",
+      "Reassigning constants is not allowed"
+    ],
+    "thinking": "Think of variables as labeled boxes where you can store and retrieve values. Decide whether the value will change ('let') or stay constant ('const').",
+    "questions": {
+      "easy": [
+        {
+          "question": "Declare a variable 'username' and store your name. Print it.",
+          "expected": "let username = 'John'; console.log(username);"
+        },
+        {
+          "question": "Create a constant 'PI' and assign 3.141. Try reassigning it to see the error.",
+          "expected": "const PI = 3.141; PI = 3.14; // Error: Assignment to constant variable"
+        },
+        {
+          "question": "Declare variables 'a=10' and 'b=20'. Print their sum.",
+          "expected": "let a = 10; let b = 20; console.log(a + b);"
+        },
+        {
+          "question": "Declare a variable without assigning a value and print it.",
+          "expected": "let x; console.log(x); // undefined"
+        },
+        {
+          "question": "Change the value of a variable twice and print the final result.",
+          "expected": "let count = 0; count = 5; count = 10; console.log(count);"
+        }
+      ],
+      "medium": [
+        {
+          "question": "Swap values of variables a=5 and b=10 without using a temporary variable.",
+          "expected": "let a = 5, b = 10; [a, b] = [b, a]; console.log(a, b);"
+        },
+        {
+          "question": "Declare multiple variables in one statement: x=1, y=2, z=3 and print them.",
+          "expected": "let x = 1, y = 2, z = 3; console.log(x, y, z);"
+        },
+        {
+          "question": "Demonstrate variable hoisting with 'var' using console.log before declaration.",
+          "expected": "console.log(hoistedVar); var hoistedVar = 'I am hoisted';"
+        },
+        {
+          "question": "Show how scope works by declaring 'let' inside a block and trying to access it outside.",
+          "expected": "{ let blockScoped = 'inside'; } console.log(blockScoped); // Error"
+        },
+        {
+          "question": "Explain why reassigning a constant variable gives an error.",
+          "expected": "Constants are immutable references, cannot be reassigned after declaration"
+        }
+      ],
+      "hard": [
+        {
+          "question": "Create a counter variable that counts how many times a function is called.",
+          "expected": "let count = 0; function counter() { count++; return count; }"
+        },
+        {
+          "question": "Store a user's profile (name, age, email) in variables and print a formatted profile card.",
+          "expected": "let name = 'John', age = 25, email = 'john@email.com'; console.log(`Name: ${name}, Age: ${age}, Email: ${email}`);"
+        },
+        {
+          "question": "Show difference in block scope using 'var' vs 'let' inside an if statement.",
+          "expected": "if (true) { var varScoped = 'var'; let letScoped = 'let'; } console.log(varScoped); // Works console.log(letScoped); // Error"
+        },
+        {
+          "question": "Implement a simple bank balance tracker with deposit and withdrawal variables.",
+          "expected": "let balance = 1000; let deposit = 500; let withdrawal = 200; balance += deposit - withdrawal; console.log(balance);"
+        },
+        {
+          "question": "Write a program that swaps three variables in a circular manner (a→b, b→c, c→a).",
+          "expected": "let a = 1, b = 2, c = 3; [a, b, c] = [b, c, a]; console.log(a, b, c);"
+        }
+      ]
+    }
+  },
+  "data-types": {
+    "title": "Data Types",
+    "definition": "Data types define the kind of values a variable can hold, like numbers, strings, or objects.",
+    "whyUse": "They help determine what operations can be performed on the data.",
+    "whenUse": "Whenever you declare a variable, you are working with a data type.",
+    "confusions": [
+      "Difference between null and undefined",
+      "Arrays and objects are reference types",
+      "NaN is still of type 'number'"
+    ],
+    "thinking": "Think of data types as categories of information. Always check the type with 'typeof' to avoid bugs.",
+    "questions": {
+      "easy": [
+        {
+          "question": "Check the type of: 'hello', 42, true, null, undefined.",
+          "expected": "console.log(typeof 'hello', typeof 42, typeof true, typeof null, typeof undefined);"
+        },
+        {
+          "question": "Convert string '123' into a number and number 456 into a string.",
+          "expected": "Number('123'); String(456);"
+        },
+        {
+          "question": "Create an array with mixed data types and print each element's type.",
+          "expected": "let mixed = [1, 'hello', true, null]; mixed.forEach(item => console.log(typeof item));"
+        },
+        {
+          "question": "Check if a boolean variable is true or false using typeof.",
+          "expected": "let flag = true; console.log(typeof flag === 'boolean');"
+        },
+        {
+          "question": "Store today's date using Date object and check its type.",
+          "expected": "let today = new Date(); console.log(typeof today);"
+        }
+      ],
+      "medium": [
+        {
+          "question": "Create an object with properties of different types (string, number, boolean).",
+          "expected": "let obj = { name: 'John', age: 25, isActive: true };"
+        },
+        {
+          "question": "Compare null and undefined using == and ===.",
+          "expected": "console.log(null == undefined); // true console.log(null === undefined); // false"
+        },
+        {
+          "question": "Demonstrate NaN by dividing a string by a number.",
+          "expected": "console.log('hello' / 5); // NaN"
+        },
+        {
+          "question": "Check typeof NaN and explain why it's 'number'.",
+          "expected": "console.log(typeof NaN); // 'number' - NaN is technically a numeric value"
+        },
+        {
+          "question": "Show that arrays and objects are reference types with an example.",
+          "expected": "let arr1 = [1,2]; let arr2 = arr1; arr2.push(3); console.log(arr1); // [1,2,3]"
+        }
+      ],
+      "hard": [
+        {
+          "question": "Write a function that takes any input and returns its type.",
+          "expected": "function getType(value) { return typeof value; }"
+        },
+        {
+          "question": "Check if a variable is an array using Array.isArray().",
+          "expected": "console.log(Array.isArray([1,2,3])); // true"
+        },
+        {
+          "question": "Create a nested object with different data types and print all values recursively.",
+          "expected": "let nested = { level1: { str: 'hello', num: 42, arr: [1,2] } }; console.log(JSON.stringify(nested, null, 2));"
+        },
+        {
+          "question": "Implement a type-checking utility function that distinguishes arrays, objects, null, and dates.",
+          "expected": "function checkType(val) { if (val === null) return 'null'; if (Array.isArray(val)) return 'array'; if (val instanceof Date) return 'date'; return typeof val; }"
+        },
+        {
+          "question": "Write a function that safely parses JSON and returns its type.",
+          "expected": "function parseJSONType(str) { try { return typeof JSON.parse(str); } catch { return 'invalid'; } }"
+        }
+      ]
+    }
+  },
+  "operators": {
+    "title": "Operators",
+    "definition": "Operators are symbols used to perform operations on values and variables.",
+    "whyUse": "They allow you to perform calculations, comparisons, and logic building.",
+    "whenUse": "When doing arithmetic, decision-making, or updating values.",
+    "confusions": [
+      "Difference between == and ===",
+      "Using assignment '=' instead of comparison '=='",
+      "Misunderstanding operator precedence"
+    ],
+    "thinking": "Think of operators as verbs in sentences. They define how values interact with each other.",
+    "questions": {
+      "easy": [
+        {
+          "question": "Calculate: 10 + 5 * 2 - 8 / 4.",
+          "expected": "console.log(10 + 5 * 2 - 8 / 4); // 18"
+        },
+        {
+          "question": "Check if 5 == '5' and 5 === '5'.",
+          "expected": "console.log(5 == '5', 5 === '5'); // true, false"
+        },
+        {
+          "question": "Use += to increment a variable from 0 to 10.",
+          "expected": "let num = 0; num += 10; console.log(num);"
+        },
+        {
+          "question": "Use modulus operator (%) to find remainder of 17 divided by 5.",
+          "expected": "console.log(17 % 5); // 2"
+        },
+        {
+          "question": "Check if a number is greater than or equal to another number.",
+          "expected": "console.log(10 >= 5); // true"
+        }
+      ],
+      "medium": [
+        {
+          "question": "Write a ternary operator to check if a number is even or odd.",
+          "expected": "let num = 7; console.log(num % 2 === 0 ? 'even' : 'odd');"
+        },
+        {
+          "question": "Check if a number is between 10 and 20 using comparison operators.",
+          "expected": "let num = 15; console.log(num >= 10 && num <= 20);"
+        },
+        {
+          "question": "Use && and || to combine conditions in an if statement.",
+          "expected": "if (age >= 18 && (hasLicense || isStudent)) { console.log('Allowed'); }"
+        },
+        {
+          "question": "Demonstrate operator precedence with a complex expression.",
+          "expected": "console.log(3 + 4 * 5 / 2 - 1); // 12"
+        },
+        {
+          "question": "Show an example where using '=' instead of '==' creates a bug.",
+          "expected": "let x = 5; if (x = 10) { console.log('This always runs'); } // Bug!"
+        }
+      ],
+      "hard": [
+        {
+          "question": "Write a calculator function that takes two numbers and an operator (+, -, *, /) and returns the result.",
+          "expected": "function calculate(a, b, op) { return op === '+' ? a + b : op === '-' ? a - b : op === '*' ? a * b : a / b; }"
+        },
+        {
+          "question": "Use ! operator to invert a boolean and explain double negation (!!).",
+          "expected": "let flag = true; console.log(!flag); // false console.log(!!'hello'); // true - converts to boolean"
+        },
+        {
+          "question": "Combine arithmetic and assignment operators to calculate compound interest.",
+          "expected": "let principal = 1000, rate = 0.05, years = 5; for (let i = 0; i < years; i++) { principal *= (1 + rate); }"
+        },
+        {
+          "question": "Write a program that simulates exponentiation without using ** operator.",
+          "expected": "function power(base, exp) { let result = 1; for (let i = 0; i < exp; i++) result *= base; return result; }"
+        },
+        {
+          "question": "Use bitwise operators (&, |, ^) to solve a small problem.",
+          "expected": "console.log(5 & 3); // 1 (bitwise AND) console.log(5 | 3); // 7 (bitwise OR)"
+        }
+      ]
+    }
+  },
+  "conditionals": {
+    "title": "Conditionals",
+    "definition": "Conditionals let you run different code based on conditions being true or false.",
+    "whyUse": "They allow programs to make decisions and follow different paths.",
+    "whenUse": "When you want to handle multiple possible outcomes.",
+    "confusions": [
+      "Using assignment '=' instead of comparison",
+      "Forgetting break in switch cases",
+      "Falsy vs truthy values"
+    ],
+    "thinking": "Think of conditionals like crossroads. You choose the path depending on the condition.",
+    "questions": {
+      "easy": [
+        {
+          "question": "Write an if statement to check if a number is positive or negative.",
+          "expected": "let num = -5; if (num >= 0) console.log('positive'); else console.log('negative');"
+        },
+        {
+          "question": "Write a ternary operator to return 'adult' if age >= 18, 'minor' otherwise.",
+          "expected": "let age = 20; console.log(age >= 18 ? 'adult' : 'minor');"
+        },
+        {
+          "question": "Check if a variable exists and is not null using truthy checks.",
+          "expected": "let value = 'hello'; if (value) console.log('Exists and truthy');"
+        },
+        {
+          "question": "Write an if statement that checks if a number is divisible by 3.",
+          "expected": "let num = 9; if (num % 3 === 0) console.log('Divisible by 3');"
+        },
+        {
+          "question": "Use if-else to check if a string is empty or not.",
+          "expected": "let str = ''; if (str.length === 0) console.log('Empty'); else console.log('Not empty');"
+        }
+      ],
+      "medium": [
+        {
+          "question": "Use switch case to handle different string commands: 'start', 'stop', 'pause'.",
+          "expected": "let command = 'start'; switch(command) { case 'start': console.log('Starting'); break; case 'stop': console.log('Stopping'); break; case 'pause': console.log('Pausing'); break; }"
+        },
+        {
+          "question": "Create nested if statements to check grade ranges (A, B, C, D, F).",
+          "expected": "let score = 85; if (score >= 90) console.log('A'); else if (score >= 80) console.log('B'); else if (score >= 70) console.log('C'); else if (score >= 60) console.log('D'); else console.log('F');"
+        },
+        {
+          "question": "Write conditionals to validate user input (non-empty string, valid email format).",
+          "expected": "let email = 'test@example.com'; if (email && email.includes('@')) console.log('Valid'); else console.log('Invalid');"
+        },
+        {
+          "question": "Write a program that checks if a year is a leap year.",
+          "expected": "let year = 2024; if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) console.log('Leap year');"
+        },
+        {
+          "question": "Use conditionals to decide shipping cost based on purchase amount.",
+          "expected": "let amount = 75; let shipping = amount > 50 ? 0 : 5.99; console.log(shipping);"
+        }
+      ],
+      "hard": [
+        {
+          "question": "Create a grading system with multiple else-if statements and real scores.",
+          "expected": "let score = 87; if (score >= 90) console.log('A'); else if (score >= 80) console.log('B'); else if (score >= 70) console.log('C'); else if (score >= 60) console.log('D'); else console.log('F');"
+        },
+        {
+          "question": "Write a program that takes weather input ('rainy', 'sunny', 'snowy') and prints what to wear.",
+          "expected": "let weather = 'rainy'; if (weather === 'rainy') console.log('Wear raincoat'); else if (weather === 'sunny') console.log('Wear sunglasses'); else console.log('Wear jacket');"
+        },
+        {
+          "question": "Use short-circuit evaluation with || to provide default values when user input is missing.",
+          "expected": "let username = ''; let displayName = username || 'Guest'; console.log(displayName);"
+        },
+        {
+          "question": "Implement a login check with username and password validation using conditionals.",
+          "expected": "let username = 'admin', password = '1234'; if (username === 'admin' && password === '1234') console.log('Login successful'); else console.log('Invalid credentials');"
+        },
+        {
+          "question": "Write a program that selects a discount rate based on customer type and purchase amount.",
+          "expected": "let customerType = 'premium', amount = 200; let discount = 0; if (customerType === 'premium' && amount > 100) discount = 0.2; else if (amount > 50) discount = 0.1; console.log(discount);"
+        }
+      ]
+    }
+  },
+  "loops": {
+    "title": "Loops",
+    "definition": "Loops are used to repeat code multiple times until a condition is met.",
+    "whyUse": "They make repetitive tasks easier and reduce code duplication.",
+    "whenUse": "When processing arrays, repeating tasks, or waiting for conditions.",
+    "confusions": [
+      "Infinite loops when forgetting to update condition",
+      "Difference between while and do-while",
+      "Using break vs continue"
+    ],
+    "thinking": "Think of loops as automatic machines that repeat tasks until told to stop.",
+    "questions": {
+      "easy": [
+        {
+          "question": "Write a for loop to print numbers 1 to 10.",
+          "expected": "for (let i = 1; i <= 10; i++) console.log(i);"
+        },
+        {
+          "question": "Use while loop to sum numbers until total exceeds 100.",
+          "expected": "let sum = 0, i = 1; while (sum <= 100) { sum += i; i++; }"
+        },
+        {
+          "question": "Use do-while loop to ask user for input at least once.",
+          "expected": "let input; do { input = prompt('Enter value:'); } while (!input);"
+        },
+        {
+          "question": "Write a for loop to print each character of a string.",
+          "expected": "let str = 'hello'; for (let i = 0; i < str.length; i++) console.log(str[i]);"
+        },
+        {
+          "question": "Print first 10 even numbers using a loop.",
+          "expected": "for (let i = 2; i <= 20; i += 2) console.log(i);"
+        }
+      ],
+      "medium": [
+        {
+          "question": "Iterate through an array of names and print each in uppercase.",
+          "expected": "let names = ['john', 'jane']; for (let name of names) console.log(name.toUpperCase());"
+        },
+        {
+          "question": "Print multiplication table of 5 using a loop.",
+          "expected": "for (let i = 1; i <= 10; i++) console.log(`5 x ${i} = ${5 * i}`);"
+        },
+        {
+          "question": "Use continue to skip odd numbers and print only even numbers between 1-20.",
+          "expected": "for (let i = 1; i <= 20; i++) { if (i % 2 !== 0) continue; console.log(i); }"
+        },
+        {
+          "question": "Write a loop that calculates factorial of 6.",
+          "expected": "let factorial = 1; for (let i = 1; i <= 6; i++) factorial *= i; console.log(factorial);"
+        },
+        {
+          "question": "Use a loop to reverse a string.",
+          "expected": "let str = 'hello', reversed = ''; for (let i = str.length - 1; i >= 0; i--) reversed += str[i]; console.log(reversed);"
+        }
+      ],
+      "hard": [
+        {
+          "question": "Create nested loops to print a 5x5 star pattern.",
+          "expected": "for (let i = 0; i < 5; i++) { let row = ''; for (let j = 0; j < 5; j++) row += '*'; console.log(row); }"
+        },
+        {
+          "question": "Write a loop that finds prime numbers between 1 and 100.",
+          "expected": "for (let i = 2; i <= 100; i++) { let isPrime = true; for (let j = 2; j < i; j++) { if (i % j === 0) { isPrime = false; break; } } if (isPrime) console.log(i); }"
+        },
+        {
+          "question": "Use for...in loop to iterate through object properties and print key-value pairs.",
+          "expected": "let obj = {a: 1, b: 2}; for (let key in obj) console.log(key, obj[key]);"
+        },
+        {
+          "question": "Use nested loops to generate a multiplication table up to 10x10.",
+          "expected": "for (let i = 1; i <= 10; i++) { for (let j = 1; j <= 10; j++) console.log(`${i} x ${j} = ${i * j}`); }"
+        },
+        {
+          "question": "Write a loop that checks for palindrome strings in an array.",
+          "expected": "let words = ['racecar', 'hello']; for (let word of words) { let reversed = word.split('').reverse().join(''); if (word === reversed) console.log(`${word} is palindrome`); }"
+        }
+      ]
+    }
+  },
+  "functions": {
+    "title": "Functions",
+    "definition": "Functions are reusable blocks of code that perform specific tasks.",
+    "whyUse": "They avoid repetition, improve readability, and enable modular programming.",
+    "whenUse": "Whenever you need to reuse logic multiple times or isolate functionality.",
+    "confusions": [
+      "Difference between function declaration and expression",
+      "Arrow function vs normal function (this binding)",
+      "Scope and closures"
+    ],
+    "thinking": "Think of functions like recipes. They take ingredients (parameters) and return results.",
+    "questions": {
+      "easy": [
+        {
+          "question": "Write a function that takes two numbers and returns their sum.",
+          "expected": "function sum(a, b) { return a + b; }"
+        },
+        {
+          "question": "Create an arrow function that squares a number.",
+          "expected": "const square = x => x * x;"
+        },
+        {
+          "question": "Write a function with default parameter values.",
+          "expected": "function greet(name = 'Guest') { return `Hello, ${name}`; }"
+        },
+        {
+          "question": "Write a function that prints 'Hello, JavaScript!'.",
+          "expected": "function hello() { console.log('Hello, JavaScript!'); }"
+        },
+        {
+          "question": "Write a function that returns the length of a string.",
+          "expected": "function strLength(str) { return str.length; }"
+        }
+      ],
+      "medium": [
+        {
+          "question": "Write a recursive function to calculate factorial of a number.",
+          "expected": "function factorial(n) { return n <= 1 ? 1 : n * factorial(n - 1); }"
+        },
+        {
+          "question": "Use rest parameters to create a function that sums any number of arguments.",
+          "expected": "function sumAll(...numbers) { return numbers.reduce((acc, num) => acc + num, 0); }"
+        },
+        {
+          "question": "Create a function that takes a callback and executes it.",
+          "expected": "function executeCallback(callback) { callback(); }"
+        },
+        {
+          "question": "Write a function that returns the maximum of three numbers.",
+          "expected": "function maxOfThree(a, b, c) { return Math.max(a, b, c); }"
+        },
+        {
+          "question": "Write a function that reverses a given string.",
+          "expected": "function reverseString(str) { return str.split('').reverse().join(''); }"
+        }
+      ],
+      "hard": [
+        {
+          "question": "Create a closure function that remembers how many times it's called.",
+          "expected": "function createCounter() { let count = 0; return function() { return ++count; }; }"
+        },
+        {
+          "question": "Write a higher-order function that takes an array and a function, applies the function to each element.",
+          "expected": "function mapArray(arr, fn) { return arr.map(fn); }"
+        },
+        {
+          "question": "Write an IIFE that prints 'Hello, World!' immediately.",
+          "expected": "(function() { console.log('Hello, World!'); })();"
+        },
+        {
+          "question": "Write a function that returns another function to multiply a number by a given factor.",
+          "expected": "function createMultiplier(factor) { return function(x) { return x * factor; }; }"
+        },
+        {
+          "question": "Implement memoization for a Fibonacci function.",
+          "expected": "function fibonacci(n, memo = {}) { if (n in memo) return memo[n]; if (n <= 2) return 1; memo[n] = fibonacci(n - 1, memo) + fibonacci(n - 2, memo); return memo[n]; }"
+        }
+      ]
+    }
+  },
+  "arrays": {
+    "title": "Arrays",
+    "definition": "Arrays are ordered collections of elements stored in a single variable.",
+    "whyUse": "They allow you to store and manage multiple values in one structure.",
+    "whenUse": "When you want to group related values like a list of names or numbers.",
+    "confusions": [
+      "Arrays are zero-indexed",
+      "Difference between push, pop, shift, unshift",
+      "Arrays are reference types"
+    ],
+    "thinking": "Think of arrays like a train with numbered seats. Each seat holds a value you can access by index.",
+    "questions": {
+      "easy": [
+        {
+          "question": "Create an array of 5 fruits and print them.",
+          "expected": "let fruits = ['apple', 'banana', 'orange', 'grape', 'mango']; console.log(fruits);"
+        },
+        {
+          "question": "Access the first and last element of an array.",
+          "expected": "let arr = [1,2,3,4,5]; console.log(arr[0], arr[arr.length - 1]);"
+        },
+        {
+          "question": "Add and remove elements using push and pop.",
+          "expected": "let arr = [1,2]; arr.push(3); arr.pop(); console.log(arr);"
+        },
+        {
+          "question": "Find the length of an array.",
+          "expected": "let arr = [1,2,3]; console.log(arr.length);"
+        },
+        {
+          "question": "Replace an element at index 2 with a new value.",
+          "expected": "let arr = [1,2,3]; arr[2] = 99; console.log(arr);"
+        }
+      ],
+      "medium": [
+        {
+          "question": "Loop through an array and print each element in uppercase.",
+          "expected": "let names = ['john', 'jane']; names.forEach(name => console.log(name.toUpperCase()));"
+        },
+        {
+          "question": "Use map to square each number in an array.",
+          "expected": "let numbers = [1,2,3]; let squared = numbers.map(n => n * n); console.log(squared);"
+        },
+        {
+          "question": "Find the largest number in an array.",
+          "expected": "let numbers = [1,5,2,8,3]; console.log(Math.max(...numbers));"
+        },
+        {
+          "question": "Filter out numbers greater than 50 from an array.",
+          "expected": "let numbers = [10,60,30,80,20]; let filtered = numbers.filter(n => n <= 50); console.log(filtered);"
+        },
+        {
+          "question": "Join array elements into a single string.",
+          "expected": "let words = ['Hello', 'World']; console.log(words.join(' '));"
+        }
+      ],
+      "hard": [
+        {
+          "question": "Flatten a nested array [[1,2],[3,4]] into [1,2,3,4].",
+          "expected": "let nested = [[1,2],[3,4]]; let flat = nested.flat(); console.log(flat);"
+        },
+        {
+          "question": "Remove duplicate values from an array.",
+          "expected": "let arr = [1,2,2,3,4,4,5]; let unique = [...new Set(arr)]; console.log(unique);"
+        },
+        {
+          "question": "Write a function to reverse an array without using reverse().",
+          "expected": "function reverseArray(arr) { let reversed = []; for (let i = arr.length - 1; i >= 0; i--) reversed.push(arr[i]); return reversed; }"
+        },
+        {
+          "question": "Sort an array of strings alphabetically.",
+          "expected": "let names = ['zoe', 'alice', 'bob']; console.log(names.sort());"
+        },
+        {
+          "question": "Find intersection of two arrays.",
+          "expected": "let arr1 = [1,2,3,4], arr2 = [3,4,5,6]; let intersection = arr1.filter(x => arr2.includes(x)); console.log(intersection);"
+        }
+      ]
+    }
+  },
+  "objects": {
+    "title": "Objects",
+    "definition": "Objects are collections of key-value pairs used to store structured data.",
+    "whyUse": "They allow grouping of related data and methods together.",
+    "whenUse": "When modeling entities like users, products, or configurations.",
+    "confusions": [
+      "Dot notation vs bracket notation",
+      "Objects are reference types",
+      "Difference between shallow and deep copy"
+    ],
+    "thinking": "Think of objects as dictionaries where keys are words and values are their meanings.",
+    "questions": {
+      "easy": [
+        {
+          "question": "Create an object for a car with properties: brand, model, year.",
+          "expected": "let car = { brand: 'Toyota', model: 'Camry', year: 2020 };"
+        },
+        {
+          "question": "Access and print a property value using dot notation.",
+          "expected": "console.log(car.brand);"
+        },
+        {
+          "question": "Add a new property 'color' to the object.",
+          "expected": "car.color = 'red'; console.log(car);"
+        },
+        {
+          "question": "Update a property value in an object.",
+          "expected": "car.year = 2022; console.log(car);"
+        },
+        {
+          "question": "Print all keys of an object.",
+          "expected": "console.log(Object.keys(car));"
+        }
+      ],
+      "medium": [
+        {
+          "question": "Loop through an object and print all keys and values.",
+          "expected": "for (let key in car) console.log(key, car[key]);"
+        },
+        {
+          "question": "Delete a property from an object.",
+          "expected": "delete car.model; console.log(car);"
+        },
+        {
+          "question": "Check if a property exists in an object.",
+          "expected": "console.log('brand' in car);"
+        },
+        {
+          "question": "Create an object with a method and call it.",
+          "expected": "let person = { name: 'John', greet() { console.log('Hello'); } }; person.greet();"
+        },
+        {
+          "question": "Use Object.keys() and Object.values() to print all keys and values.",
+          "expected": "console.log(Object.keys(car), Object.values(car));"
+        }
+      ],
+      "hard": [
+        {
+          "question": "Create a nested object for a user with address details.",
+          "expected": "let user = { name: 'John', address: { street: '123 Main St', city: 'NYC' } };"
+        },
+        {
+          "question": "Clone an object without reference issues.",
+          "expected": "let clone = {...car};"
+        },
+        {
+          "question": "Write a function that merges two objects.",
+          "expected": "function mergeObjects(obj1, obj2) { return {...obj1, ...obj2}; }"
+        },
+        {
+          "question": "Deep copy an object using JSON methods.",
+          "expected": "let deepCopy = JSON.parse(JSON.stringify(user));"
+        },
+        {
+          "question": "Write a function to compare two objects for equality.",
+          "expected": "function objectsEqual(obj1, obj2) { return JSON.stringify(obj1) === JSON.stringify(obj2); }"
+        }
+      ]
+    }
+  },
+
+  "events": {
+    "title": "Events",
+    "definition": "Events are actions or occurrences that happen in the browser, like clicks or key presses.",
+    "whyUse": "They let your program respond to user interactions.",
+    "whenUse": "When building interactive web applications.",
+    "confusions": [
+      "Difference between inline and addEventListener",
+      "Event bubbling vs capturing",
+      "this keyword inside event handlers"
+    ],
+    "thinking": "Think of events like signals. When something happens, your code listens and reacts.",
+    "questions": {
+      "easy": [
+        {
+          "question": "Add a click event listener to a button that prints 'Button clicked!'.",
+          "expected": "TODO"
+        },
+        {
+          "question": "Create an input field and log its value on change.",
+          "expected": "TODO"
+        },
+        {
+          "question": "Show an alert when a page loads.",
+          "expected": "TODO"
+        },
+        {
+          "question": "Print a message when the mouse enters a div.",
+          "expected": "TODO"
+        },
+        {
+          "question": "Log a message when a key is released.",
+          "expected": "TODO"
+        }
+      ],
+      "medium": [
+        {
+          "question": "Prevent a form from submitting using event.preventDefault().",
+          "expected": "TODO"
+        },
+        {
+          "question": "Add mouseover event to change background color of a div.",
+          "expected": "TODO"
+        },
+        {
+          "question": "Track keydown events and print which key was pressed.",
+          "expected": "TODO"
+        },
+        {
+          "question": "Add a double-click event to toggle text size.",
+          "expected": "TODO"
+        },
+        {
+          "question": "Use event.target to print clicked element's tag.",
+          "expected": "TODO"
+        }
+      ],
+      "hard": [
+        {
+          "question": "Implement event delegation for a list of items.",
+          "expected": "TODO"
+        },
+        {
+          "question": "Create a custom event and dispatch it.",
+          "expected": "TODO"
+        },
+        {
+          "question": "Build a simple counter with increment/decrement buttons using events.",
+          "expected": "TODO"
+        },
+        {
+          "question": "Stop event propagation in nested elements and explain the effect.",
+          "expected": "TODO"
+        },
+        {
+          "question": "Implement drag and drop for an element.",
+          "expected": "TODO"
+        }
+      ]
+    }
+  },
+  "dom": {
+    "title": "DOM",
+    "definition": "DOM (Document Object Model) represents the structure of a webpage as a tree of objects.",
+    "whyUse": "It allows JavaScript to interact with and manipulate webpage content.",
+    "whenUse": "When dynamically updating HTML, CSS, or responding to user actions.",
+    "confusions": [
+      "Difference between innerText and innerHTML",
+      "querySelector vs getElementById",
+      "Live vs static node lists"
+    ],
+    "thinking": "Think of the DOM like a family tree where each node is connected and can be accessed or modified.",
+    "questions": {
+      "easy": [
+        {
+          "question": "Select a paragraph by ID and change its text.",
+          "expected": "TODO"
+        },
+        {
+          "question": "Change the background color of a div using JavaScript.",
+          "expected": "TODO"
+        },
+        {
+          "question": "Add a new list item to an unordered list.",
+          "expected": "TODO"
+        },
+        {
+          "question": "Change the src attribute of an image.",
+          "expected": "TODO"
+        },
+        {
+          "question": "Hide and show an element using style.display.",
+          "expected": "TODO"
+        }
+      ],
+      "medium": [
+        {
+          "question": "Select all paragraphs and change their font size.",
+          "expected": "TODO"
+        },
+        {
+          "question": "Create a new element dynamically and append it to the body.",
+          "expected": "TODO"
+        },
+        {
+          "question": "Remove an element from the DOM.",
+          "expected": "TODO"
+        },
+        {
+          "question": "Add a CSS class dynamically to an element.",
+          "expected": "TODO"
+        },
+        {
+          "question": "Replace an existing element with a new one.",
+          "expected": "TODO"
+        }
+      ],
+      "hard": [
+        {
+          "question": "Build a simple to-do list app with add and delete functionality.",
+          "expected": "TODO"
+        },
+        {
+          "question": "Traverse the DOM tree to find parent and child nodes.",
+          "expected": "TODO"
+        },
+        {
+          "question": "Implement a light/dark mode toggle using DOM manipulation.",
+          "expected": "TODO"
+        },
+        {
+          "question": "Build a modal popup using DOM methods.",
+          "expected": "TODO"
+        },
+        {
+          "question": "Create a live character counter for a textarea.",
+          "expected": "TODO"
+        }
+      ]
+    }
+  }
+}

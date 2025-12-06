@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Loops Basics",
+    "questions": [
+      {
+        "question": "What does a for loop do?",
+        "options": ["Repeats code", "Stores data", "Defines a function", "Ends a program"],
+        "answer": "Repeats code"
+      },
+      {
+        "question": "Which keyword starts a loop?",
+        "options": ["loop", "for", "repeat", "start"],
+        "answer": "for"
+      }
+    ]
+  },
+  {
+    "title": "Functions Deep Dive",
+    "questions": [
+      {
+        "question": "What is the purpose of a function?",
+        "options": ["To store data", "To reuse code", "To create loops", "To define variables"],
+        "answer": "To reuse code"
+      },
+      {
+        "question": "Which keyword defines a function?",
+        "options": ["define", "func", "function", "method"],
+        "answer": "function"
+      }
+    ]
+  }
+]
