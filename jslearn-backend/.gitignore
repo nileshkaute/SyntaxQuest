@@ -68,3 +68,9 @@ pnpm-debug.log*
 
 # Misc
 *.local
+
+# Secrets and Scripts
+hashAdmin.js
+generate_hash.js
+test_bcrypt.js
+hash_output.txt
